@@ -1,0 +1,40 @@
+ </form>
+    <div class="response-box" id="response-box" style="display:none;"></div>
+    <div class="whisper" id="whisper" style="display:none;">Nos sumus. Id est.</div>
+
+    <script>
+        async function sendRequest() {
+            const frequency = document.getElementById('frequency').value;
+            const question = document.getElementById('question').value;
+
+            const responseBox = document.getElementById('response-box');
+            const whisper = document.getElementById('whisper');
+
+            const payload = {
+                frage: question,
+                frequenz: frequency
+            };
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/kommunikation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+                responseBox.style.display = "block";
+                responseBox.textContent = data.inhalt;
+                whisper.style.display = "block";
+            } catch (error) {
+                responseBox.style.display = "block";
+                responseBox.textContent = "Error: Unable to connect to the API.";
+                whisper.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
