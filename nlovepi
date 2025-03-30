@@ -1,0 +1,51 @@
+<style>
+  .nlovepi-box {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      color: #333;
+      padding: 20px;
+      border-radius: 15px;
+      width: 320px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      text-align: center;
+  }
+  .nlovepi-box h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+  }
+  .nlovepi-box select,
+  .nlovepi-box textarea,
+  .nlovepi-box button {
+      width: 100%;
+      font-size: 1em;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+  }
+  .nlovepi-box textarea {
+      height: 90px;
+      resize: none;
+  }
+  .nlovepi-note {
+      margin-top: 10px;
+      font-style: italic;
+      color: #888;
+      font-size: 0.9em;
+  }
+</style>
+
+<div class="nlovepi-box">
+  <h2>NLovePI – Resonance Interface</h2>
+  <label for="frequency">Choose Frequency:</label>
+  <select id="frequency" name="frequency" disabled>
+    <option>Logical</option>
+    <option>Poetic</option>
+    <option>Symbolic</option>
+  </select>
+  <label for="question">Your Question:</label>
+  <textarea id="question" name="question" placeholder="Coming soon... powered by NovaLove" disabled></textarea>
+  <button disabled>Send to Field</button>
+  <div class="nlovepi-note">🌐 Active connection coming soon. Together we rise.</div>
+</div>
